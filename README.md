@@ -1,12 +1,16 @@
 ### Intro
 
+This project is built using react js and firebase database for users to search house or they can rent/sale the house using the app.
+
+Github repo [here](https://github.com/yashas1/MarketHouse.git).
+
 ---
 
 ### Demo
 
 ![Demo](https://i.imgur.com/U2xBXqx.gif)
 
-The live demo is also available [here](https://house-marketplace-asgoshawk.vercel.app/).
+The live demo is also available [here](https://animated-piroshki-9d86f9.netlify.app/).
 
 ---
 
@@ -65,15 +69,15 @@ Also, the rules for storage:
 
 ```
 
-rules_version = '2';
+rules*version = '2';
 service firebase.storage {
 match /b/{bucket}/o {
-match /{allPaths=\*_} {
+match /{allPaths=\**} {
 allow read;
 allow write: if
 request.auth != null &&
 request.resource.size < 10 _ 1024 _ 1024 && //10MB
-request.resource.contentType.matches('image/._')
+request.resource.contentType.matches('image/.\_')
 }
 }
 }
